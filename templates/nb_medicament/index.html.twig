@@ -1,0 +1,29 @@
+{% extends './base.html.twig' %}
+
+{%  block title 'Prescription' %}
+{% block body %}
+<head xmlns="http://www.w3.org/1999/html">
+    <h1 align="left" class="left"><span class="soulign">Tableau de médicament</span></h1>
+</head>
+
+<table>
+    <thead>
+    <tr>
+        <th >Nombre restant</th>
+        <th>Famille</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        {% for med in med %}
+        <td value="{{ med.medDepotlegal }}"></td>
+        {% endfor %}
+
+        {% for famille in famille %}
+        <td>{{ famille.famLibelle }} </td>
+        {% endfor %}
+    </tr>
+    </tbody>
+</table>
+
+{% endblock %}

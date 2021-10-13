@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Individus{% endblock %}
+
+{% block body %}
+
+
+    <table class="table tableau">
+        <thead>
+        <tr>
+
+            <th scope="col">Type d'indivu</th>
+            <th scope="col">Actions</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        {% for TypeIndividu in types %}
+        <tr>
+
+
+            <td> <span class="h5">{{ TypeIndividu.tinLibelle }}</span></td>
+            <td> <a href="{{ path('admin.individu.edit', {id: TypeIndividu.tinCode}) }}">
+                    <button type="submit" name="button" value="insert" class="btn-ajouter" >Modifier</button></a>
+
+            </td>
+        </tr>
+        {% endfor %}
+
+        </tbody>
+    </table>
+
+
+    <a href="/ajout/type">
+        <button type="submit" name="button" value="insert" class="btn-modifier">ajouter</button>
+    </a>
+
+
+
+{% endblock %}

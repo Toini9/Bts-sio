@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New MedP{% endblock %}
+
+{% block body %}
+    <h1>Create new MedP</h1>
+
+    {{ include('med_p/_form.html.twig') }}
+
+    <a href="{{ path('med_p_index') }}">back to list</a>
+{% endblock %}

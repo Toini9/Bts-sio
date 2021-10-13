@@ -1,0 +1,50 @@
+{% extends './base.html.twig' %}
+
+{%  block title 'Prescription' %}
+{% block body %}
+<head>
+    <h1><div><span class="soulign">Prescription</span></div></h1>
+</head>
+<div class="container">
+    <form name="prescrire" method="post" action={{ path("prescription") }}>
+
+        <label>Sélectionnez un médicament : </label>
+            <select class="form-select" aria-label="Default select example" name="medoc">
+                <option value="">-- Please choose an option --</option>
+                {% for Medicament in Medicament  %}
+                    <option value="{{ Medicament.medDepotlegal }}">{{ Medicament.medNomcommercial }}</option>
+                {% endfor %}
+            </select>
+
+        <br><br>
+
+            <label>Sélectionner un individu :</label>
+            <select class="form-select" aria-label="Default select example" name="ind">
+                <option value=""></option>
+                {% for tin in tin  %}
+                    <option value="{{ tin.tinCode }}">{{ tin.tinLibelle }}</option>
+                {% endfor %}
+            </select>
+
+        <br><br>
+
+            <label>Sélectionner un dosage :</label>
+            <select class="form-select" aria-label="Default select example" name="dos">
+                <option value="">-- Please choose an option --</option>
+                {% for dosage in dosage  %}
+                    <option value="{{ dosage.dosCode }}">{{ dosage.dosQuantite }}</option>
+                {% endfor %}
+            </select>
+
+        <br><br>
+
+            <label>Indication du dosage et de la fréquence de prise d'un médicament :</label><br>
+            <textarea class="form-control" name="poso" typeof="text" rows="9" cols="60"></textarea>
+        <br><br>
+
+        <input type="hidden" name="_csrf_token" value="{{ csrf_token('addMedoc') }}"/>
+            <input type="submit" name="envoi" value="Envoyer" />
+            <input type="reset" name="annul" value="Annuler" />
+    </form>
+</div>
+{% endblock %}

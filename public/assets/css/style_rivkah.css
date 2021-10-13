@@ -1,0 +1,28 @@
+caption{
+    padding: 10px 20px;
+    background-color: #01b4e9;
+    color: white;
+    text-transform: uppercase;
+    margin-top: 70px;
+    font-family: "HoloLens MDL2 Assets", sans-serif;
+}
+.span {
+
+}
+#type_individu_save, .btn-ajouter, .btn-modifier{
+    padding: 10px 20px;
+    background-color: #01b4e9;
+    color: white;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+label.required{
+
+    margin-left: 100px;
+}
+#type_individu_save, .btn-ajouter, .btn-modifier {
+    margin-left: 100px;
+}
+

@@ -1,0 +1,21 @@
+{% extends './base.html.twig' %}
+
+{%  block title 'Accueil GSB' %}
+{% block body %}
+
+    <h1><div><span class="soulign">Nos Médicaments </span></div></h1>
+    <div class="liste">
+        {% for Medicament in Medicament  %}
+        <div class="medicament">
+            <img src="{{ asset('assets/image/image.svg') }}">
+            <div>{{Medicament.medNomcommercial}}</div>
+            <div>{{Medicament.medPrixechantillon}}&euro;</div>
+            <div class="{{class[Medicament.medDepotLegal]}}">{{libelle[Medicament.medDepotLegal]}}</div>
+            <div><a href="{{ path('admin.medicament.edit', {id: Medicament.medDepotlegal}) }}">Editer</a></div>
+        </div>
+        {% endfor %}
+        <div class="boutonAjout"><a href="/ajoutMedicament">+</a></div>
+    </div>
+    </div>
+
+{% endblock %}

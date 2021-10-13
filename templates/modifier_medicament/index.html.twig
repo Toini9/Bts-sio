@@ -1,0 +1,39 @@
+{% extends './base.html.twig' %}
+
+{%  block title 'Accueil GSB' %}
+{% block body %}
+    <head>
+        <h1 align="left" class="left"><span class="soulign">Modifier le Medicament </span></h1>
+    </head>
+    {{ form_start(form) }}
+
+    <label>{{ form_row(form.medNomcommercial) }}</label>
+
+    <label>{{ form_row(form.medComposition) }}</label>
+
+
+    <label>{{ form_row(form.medEffets) }}</label>
+
+
+    <label>{{ form_row(form.medPrixechantillon) }}</label>
+
+
+    <label>{{ form_row(form.famCode) }}</label>
+
+
+    {{ form_widget(form) }}
+    {{ form_end(form) }}
+
+    </form>
+
+    <h1><div><span class="soulign">Médicaments non conseillé </span></div></h1>
+    <div class="liste">
+        {% for Liste in Liste  %}
+            <div class="medicament">
+                <img src="{{ asset('assets/image/image.svg') }}">
+                <div>{{Liste.libellemed}}</div>
+            </div>
+        {% endfor %}
+    </div>
+    </div>
+{% endblock %}
